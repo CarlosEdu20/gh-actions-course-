@@ -29,5 +29,6 @@ jobs:
               working-directory: ./app
 
             - name: Run program
-              run: java -cp target/app-1.0-SNAPSHOT.jar com.exemplo.HelloWorld
+              run: java -cp target/classes org.example.Main
+
               working-directory: ./app
