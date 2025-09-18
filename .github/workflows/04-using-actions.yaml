@@ -24,8 +24,10 @@ jobs:
                 restore-keys: |
                     ${{ runner.os }}-maven-
 
-            - name: Build With Maven
-              run: mvn install -B
+            - name: Build with Maven
+              run: mvn -B package
+              working-directory: ./app
 
-            - name: Run tests
-              run: mvn 
+            - name: Run program
+              run: java -cp target/app-1.0-SNAPSHOT.jar com.exemplo.HelloWorld
+              working-directory: ./app
